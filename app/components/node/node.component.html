@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <h3>My Node</h3>
+            <table class="table table-bordered table-striped">
+                <tr>
+                    <th>Name</th>
+                    <td>  {{ChainInfo?.chainname}}</td>
+                </tr>
+                <tr>
+                    <th>Version</th>
+                    <td>{{ChainInfo?.protocolversion}}</td>
+                </tr>
+                <tr>
+                    <th>Protocol</th>
+                    <td>{{ChainInfo?.protocol}}</td>
+                </tr>
+                <tr>
+                    <th>Node address</th>
+                    <td>{{ChainInfo?.nodeaddress}}</td>
+                </tr>
+                <tr>
+                    <th>Blocks</th>
+                    <td>{{ChainInfo?.blocks}}</td>
+                </tr>
+                <tr>
+                    <th>Peers</th>
+                    <td>{{ChainInfo?.Connections}}</td>
+                </tr>
+            </table>
+            
+		    <!--<h3>Connected Nodes</h3>
+			<table  class="table table-bordered table-striped table-break-words">
+                <tr>
+                    <th>Node IP address</th>
+                    <td>{{PeerInfo?.Connections}}</td>
+                </tr>
+                <tr>
+                    <th>Handshake address</th>
+                    <td class="td-break-words small"><?php echo html($peer['handshake'])?></td>
+                </tr>
+                <tr>
+                    <th>Latency</th>
+                    <td><?php echo html(number_format($peer['pingtime'], 3))?> sec</td>
+                </tr>
+			</table>-->
+        </div>
+    </div>
+</div>
