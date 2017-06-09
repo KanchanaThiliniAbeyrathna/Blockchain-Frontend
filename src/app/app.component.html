@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+
+<div class="container">
+  <h1><a href="./">{{title}}</a></h1>
+  <br>
+  <nav class="navbar navbar-inverse">
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a (click)="getNodePage()">Node</a></li>
+        <li><a (click)="getBalancePage()">My Balance</a></li>
+        <li><a (click)="getContractPage()">Create Contract</a></li>
+      </ul>
+    </div>
+  </nav>		
+</div>
+
+<router-outlet></router-outlet>
