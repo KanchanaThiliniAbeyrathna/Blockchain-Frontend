@@ -2,7 +2,6 @@
   "name": "blockchain-frontend",
   "version": "0.0.0",
   "license": "MIT",
-  "description": "This is Frontend implementaion of the distributed freelancing system",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
