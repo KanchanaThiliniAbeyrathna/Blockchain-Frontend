@@ -5,6 +5,7 @@ import { ModuleWithComponentFactories , ModuleWithProviders } from "@angular/cor
 import { ContractComponent } from './components/contract/contract.component';
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -18,6 +19,9 @@ const appRoutes: Routes = [
   {
       path: 'balance',
       component: BalanceComponent
+  },{
+      path: 'profile',
+      component: ProfileComponent
   },
 //   {
 //       path: '',
