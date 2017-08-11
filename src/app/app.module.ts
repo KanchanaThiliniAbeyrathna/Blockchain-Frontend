@@ -33,7 +33,7 @@ import { MyService } from './services/service';
     ProjectsComponent,
     WorkComponent,
     ProfileComponent,
-    SkillComponent
+    SkillComponent,
     ProfileComponent,
     LoginComponent,
     RegisterComponent
