@@ -11,7 +11,8 @@ declare var require: any;
 export class NodeComponent implements OnInit {
 
     ChainInfo = null;
-    PeerInfo = null;
+    peers = null;
+    addresses= null;
 
     constructor(private _router: Router ,private _service: MyService) {
         _service.getinfo().then(data => {
@@ -21,7 +22,12 @@ export class NodeComponent implements OnInit {
 
         _service.getpeerinfo().then(data => {
             console.log(data);
-            this.PeerInfo = data;
+            this.peers = data;
+        });
+
+        _service.getaddresses().then(data => {
+            console.log(data);
+            this.addresses = data;
         });
     }
 

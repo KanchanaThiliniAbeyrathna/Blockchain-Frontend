@@ -4,11 +4,11 @@ import { Router} from '@angular/router';
 declare var require: any;
 
 @Component({
-    selector: 'my-contract',
-    templateUrl: './contract.component.html',
+    selector: 'my-project-new',
+    templateUrl: './project-new.component.html',
     providers :[MyService]
 })
-export class ContractComponent implements OnInit {
+export class ProjectNewComponent implements OnInit {
 
     fromAddresses = null;
     toAddresses = null;
