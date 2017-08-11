@@ -16,7 +16,21 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
-
+    {
+      path: 'contract',
+      component: ContractComponent
+    },
+    {
+        path: 'node',
+        component: NodeComponent
+    },
+    {
+        path: 'balance',
+        component: BalanceComponent
+    },{
+        path: 'profile',
+        component: ProfileComponent
+    },{
         path: 'contract_view',
         component: ContractViewComponent
     },
