@@ -4,13 +4,11 @@ import { Router} from '@angular/router';
 declare var require: any;
 
 @Component({
-    selector: 'my-projects',
-    templateUrl: './projects.component.html',
+    selector: 'my-work',
+    templateUrl: './work.component.html',
     providers :[MyService]
 })
-export class ProjectsComponent implements OnInit {
-
-    custom_search= false;
+export class WorkComponent implements OnInit {
 
     constructor(private _router: Router ,private _service: MyService) {
         
@@ -18,4 +16,5 @@ export class ProjectsComponent implements OnInit {
 
     ngOnInit() { 
     }
+
 }
