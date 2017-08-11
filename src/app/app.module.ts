@@ -9,6 +9,7 @@ import { ContractViewComponent } from './components/contract/contract_view.compo
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProjectNewComponent } from './components/work/project-new.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 import { routing} from './app.routing';
 
@@ -21,7 +22,8 @@ import { MyService } from './services/service';
     ContractViewComponent,
     NodeComponent,
     BalanceComponent,
-    ProjectNewComponent
+    ProjectNewComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

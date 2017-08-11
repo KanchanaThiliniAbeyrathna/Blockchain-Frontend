@@ -7,6 +7,7 @@ import { ContractViewComponent } from './components/contract/contract_view.compo
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProjectNewComponent } from './components/work/project-new.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const appRoutes: Routes = [
   {
@@ -16,6 +17,9 @@ const appRoutes: Routes = [
   {
       path: 'balance',
       component: BalanceComponent
+  },{
+      path: 'profile',
+      component: ProfileComponent
   },
   {
       path: 'contract',
