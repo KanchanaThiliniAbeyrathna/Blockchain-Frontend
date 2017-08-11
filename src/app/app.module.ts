@@ -8,6 +8,8 @@ import { ContractComponent } from './components/contract/contract.component';
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 import { routing} from './app.routing';
 
@@ -19,7 +21,9 @@ import { MyService } from './services/service';
     ContractComponent,
     NodeComponent,
     BalanceComponent,
-    ProfileComponent
+    ProfileComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

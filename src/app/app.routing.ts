@@ -6,6 +6,8 @@ import { ContractComponent } from './components/contract/contract.component';
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes: Routes = [
   {
@@ -22,6 +24,15 @@ const appRoutes: Routes = [
   },{
       path: 'profile',
       component: ProfileComponent
+  },
+
+  {
+      path: 'login',
+      component: LoginComponent
+  },
+  {
+      path: 'register',
+      component: RegisterComponent
   },
 //   {
 //       path: '',
