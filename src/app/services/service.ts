@@ -26,6 +26,38 @@ export class MyService {
     getpeerinfo():Promise<any> {
         return this.callAPI('getpeerinfo','get',null,null,null);
     }
+
+    getaddresses():Promise<any> {
+        return this.callAPI('getaddresses','get',null,null,null);
+    }
+
+    listpermissions(permissions: any ,addresses : any):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        if (permissions){
+            params.set( 'permissions' , permissions);
+        }
+        if (addresses){
+            params.set( 'addresses' , addresses);  
+        }      
+        return this.callAPI('listpermissions','get',params,null,null);
+    }
+
+    getaddressbalances(address : string):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        params.set( 'address' , address);
+        return this.callAPI('getaddressbalances','get',params,null,null);
+    }
+
+    liststreams():Promise<any> {
+        return this.callAPI('liststreams','get',null,null,null);
+    }
+
+    createStream(address : string, stream : string):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        params.set( 'from_address' , address);
+        params.set( 'name' , name);
+        return this.callAPI('createfrom','get',params,null,null);
+    }
     
     callAPI(url: string, httpMethod: string, params: URLSearchParams, headers: Headers, body: string) : Promise<any>{
         switch (httpMethod) {

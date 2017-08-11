@@ -2,6 +2,18 @@
     <div class="row">
         <div class="col-sm-6">
             <h3>My Balance</h3>
+            <div *ngFor="let address of addresses; let curIndex=index">
+                <table class="table table-bordered table-condensed table-break-words">
+                    <tr>
+                        <th style="width:20%;">Address</th>
+                        <td>{{address?.address}}</td>
+                    </tr>
+                    <tr *ngFor="let balance of allBalances[curIndex]">
+                        <th style="width:20%;">{{balance?.name}}</th>
+                        <td class="td-break-words small" >{{balance?.qty}}</td>
+                    </tr>
+				</table>
+            </div>
         </div>
     </div>
 </div>

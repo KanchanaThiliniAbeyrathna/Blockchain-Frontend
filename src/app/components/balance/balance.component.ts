@@ -10,19 +10,27 @@ declare var require: any;
 })
 export class BalanceComponent implements OnInit {
 
-    ChainInfo = null;
-    PeerInfo = null;
+    // address = "1JEYjux6UsvM4XK2SARwSm1m3ebqgQQdTFeq4f";
+    addresses = null;
+    allBalances = null;
 
     constructor(private _router: Router ,private _service: MyService) {
-        _service.getinfo().then(data => {
+        _service.getaddresses().then(data => {
             console.log(data);
-            this.ChainInfo = data;
+            this.addresses = data;
+            this.allBalances = this.getBalances(this.addresses);
         });
+    }
 
-        _service.getpeerinfo().then(data => {
-            console.log(data);
-            this.PeerInfo = data;
-        });
+    private getBalances ( addresses : any){
+        let balances = [] ;
+        addresses.forEach(address => {
+            
+            this._service.getaddressbalances(address.address).then(data => {
+                balances.push(data)
+            });
+        });  
+        return balances;
     }
 
     ngOnInit() { 

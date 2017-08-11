@@ -25,25 +25,32 @@
                 </tr>
                 <tr>
                     <th>Peers</th>
-                    <td>{{ChainInfo?.Connections}}</td>
+                    <td>{{ChainInfo?.connections}}</td>
                 </tr>
             </table>
             
-		    <!--<h3>Connected Nodes</h3>
-			<table  class="table table-bordered table-striped table-break-words">
-                <tr>
-                    <th>Node IP address</th>
-                    <td>{{PeerInfo?.Connections}}</td>
-                </tr>
-                <tr>
-                    <th>Handshake address</th>
-                    <td class="td-break-words small"><?php echo html($peer['handshake'])?></td>
-                </tr>
-                <tr>
-                    <th>Latency</th>
-                    <td><?php echo html(number_format($peer['pingtime'], 3))?> sec</td>
-                </tr>
-			</table>-->
+            <div *ngIf="peers">
+                <div *ngIf="peers.length!=0" >
+                    <h3>Connected Nodes</h3>
+                    <div *ngFor="let p of peers">
+                        <h4> Peer {{p?.addr}} </h4>
+                        <table class="table table-bordered table-striped table-break-words">
+                            <tr>
+                                <th>Node IP address</th>
+                                <td>{{p?.addr}}</td>
+                            </tr>
+                            <tr>
+                                <th>Handshake address</th>
+                                <td class="td-break-words small">{{p?.handshake}}</td>
+                            </tr>
+                            <tr>
+                                <th>Latency</th>
+                                <td>{{p?.pingtime}} sec</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
