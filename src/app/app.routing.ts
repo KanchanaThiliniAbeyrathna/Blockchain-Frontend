@@ -8,6 +8,7 @@ import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProjectNewComponent } from './components/work/project-new.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SkillComponent } from './components/admin/skill.component';
 
 const appRoutes: Routes = [
   {
@@ -32,6 +33,10 @@ const appRoutes: Routes = [
   {
       path: 'project_new',
       component: ProjectNewComponent
+  },
+  {
+      path: 'skills',
+      component: SkillComponent
   },
 //   {
 //       path: '',

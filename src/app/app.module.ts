@@ -10,6 +10,7 @@ import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
 import { ProjectNewComponent } from './components/work/project-new.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { SkillComponent } from './components/admin/skill.component';
 
 import { routing} from './app.routing';
 
@@ -23,7 +24,8 @@ import { MyService } from './services/service';
     NodeComponent,
     BalanceComponent,
     ProjectNewComponent,
-    ProfileComponent
+    ProfileComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,
