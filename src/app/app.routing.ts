@@ -3,14 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { ModuleWithComponentFactories , ModuleWithProviders } from "@angular/core";
 
 import { ContractComponent } from './components/contract/contract.component';
+import { ContractViewComponent } from './components/contract/contract_view.component';
 import { NodeComponent } from './components/node/node.component';
 import { BalanceComponent } from './components/balance/balance.component';
+import { ProjectNewComponent } from './components/work/project-new.component';
 
 const appRoutes: Routes = [
-  {
-      path: 'contract',
-      component: ContractComponent
-  },
   {
       path: 'node',
       component: NodeComponent
@@ -18,6 +16,18 @@ const appRoutes: Routes = [
   {
       path: 'balance',
       component: BalanceComponent
+  },
+  {
+      path: 'contract',
+      component: ContractComponent
+  },
+  {
+      path: 'contract_view',
+      component: ContractViewComponent
+  },
+  {
+      path: 'project_new',
+      component: ProjectNewComponent
   },
 //   {
 //       path: '',

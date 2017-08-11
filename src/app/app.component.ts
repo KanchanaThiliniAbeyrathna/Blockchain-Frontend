@@ -25,6 +25,12 @@ export class AppComponent implements OnInit{
       this._router.navigate(link);
       console.log("contract clicked");
   }
+  
+  public getViewContractsPage(){
+      let link =['/contract_view'];
+      this._router.navigate(link);
+      console.log("contract_view clicked");
+  }
 
   public getNodePage() {
       let link =['/node'];
