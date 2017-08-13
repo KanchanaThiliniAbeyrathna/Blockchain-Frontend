@@ -39,4 +39,8 @@ export class ProjectNewComponent implements OnInit {
             this.balances = data;
         });
     }
+
+    save(){
+        console.log("save clicked");
+    }
 }
