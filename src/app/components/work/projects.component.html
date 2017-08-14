@@ -49,12 +49,12 @@
                 <div class="panel-body no-padding" style="display: block;">
                     <table class="table table-striped">
                         <tbody>
-                            <tr>
+                            <tr *ngFor="let project of projects">
                                 <td class="col-sm-5">
-                                    <a href="#">
-                                        <h3 class="text-primary"><i class="lnr lnr-enter"></i> Project Title</h3>
+                                    <a style="cursor:pointer" (click)="goToProject(project.project_id)">
+                                        <h3 class="text-primary"><i class="lnr lnr-enter"></i>{{project.projectName}}</h3>
                                     </a>
-                                    <p>Description Description Description Description </p>
+                                    <p>{{project.description}} </p>
                                     <br>
                                     <h5>
                                         <span class="label label-default">Java</span>
@@ -70,33 +70,7 @@
                                         <span class="label label-success">Started</span>
                                     </h4>
                                 </td>
-                                <td class="col-sm-2">10-25 USD</td>
-                                <td class="col-sm-1">
-                                    <button class="btn btn-xs btn-warning">Bid Now</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="col-sm-5">
-                                    <a href="#">
-                                        <h3 class="text-primary"><i class="lnr lnr-enter"></i> Project Title</h3>
-                                    </a>
-                                    <p>Description Description Description Description </p>
-                                    <br>
-                                    <h5>
-                                        <span class="label label-default">Java</span>
-                                        <span class="label label-default">HTML</span>
-                                        <span class="label label-default">CSS</span>
-                                        <span class="label label-default">PHP</span>
-                                        <span class="label label-default">MySQL</span>
-                                    </h5>
-                                </td>
-                                <td class="col-sm-2">1</td>
-                                <td class="col-sm-2">
-                                    <h4>
-                                        <span class="label label-success">Started</span>
-                                    </h4>
-                                </td>
-                                <td class="col-sm-2">10-25 USD</td>
+                                <td class="col-sm-2">{{project.budget.min}}-{{project.budget.max}} {{project.budget.type}}</td>
                                 <td class="col-sm-1">
                                     <button class="btn btn-xs btn-warning">Bid Now</button>
                                 </td>

@@ -10,20 +10,20 @@
                 <div class="form-group">
                     <label class="col-sm-12">Project Name</label>
                     <div class="col-sm-12">
-                        <input class="form-control" name="name" id="name" placeholder="E.g. Website for a Greeting Card Shop">
+                        <input [(ngModel)]="project.projectName" [ngModelOptions]="{standalone: true}" class="form-control" name="name" id="name" placeholder="E.g. Website for a Greeting Card Shop">
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-12">Project description</label>
                     <div class="col-sm-12">
-                        <textarea class="form-control" rows="4" name="description" id="description" placeholder="Describe your project here..."></textarea>
+                        <textarea [(ngModel)]="project.description" [ngModelOptions]="{standalone: true}" class="form-control" rows="4" name="description" id="description" placeholder="Describe your project here..."></textarea>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-sm-12">Additional Files</label>
                     <div class="col-sm-12">
-                        <input type="file" name="files" multiple>
-                        <input class="btn btn-default btn-sm" type="submit">
+                        <input type="file" name="files" multiple (change)=" changeFiles(input)" #input >
+                        <!--<input class="btn btn-default btn-sm" type="submit">-->
                     </div>
                 </div>
                 <div class="form-group">
@@ -40,13 +40,13 @@
                     <label class="col-sm-12">Expected Time Period for the Project</label>
                     <div class="col-sm-3">
                         <div class="input-group input-group1">
-                            <input type="number" class="form-control" id="time_period_month" min=0 max=12>
+                            <input [(ngModel)]="project.time_period.months" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="time_period_month" min=0 max=12>
                             <span class="input-group-addon">Months</span>
                         </div>
-                    </div>
+                    </div> 
                     <div class="col-sm-3">
                         <div class="input-group input-group1">
-                            <input type="number" class="form-control" id="time_period_week" min=0 max=4>
+                            <input [(ngModel)]="project.time_period.weeks" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="time_period_week" min=0 max=4>
                             <span class="input-group-addon">Weeks</span>
                         </div>
                     </div>
@@ -59,23 +59,23 @@
                     <label for="min_qty" class="col-sm-5">Minimum Amount</label>
                     <label for="max_qty" class="col-sm-5">Maximum Amount</label>
                     <div class="col-sm-5">
-                        <input class="form-control" name="min_qty" id="min_qty" min=0 type="number">
+                        <input [(ngModel)]="project.budget.min" [ngModelOptions]="{standalone: true}" class="form-control" name="min_qty" id="min_qty" min=0 type="number">
                     </div>
 
                     <div class="col-sm-5">
-                        <input class="form-control" name="max_qty" id="max_qty" min=0 type="number">
+                        <input [(ngModel)]="project.budget.max" [ngModelOptions]="{standalone: true}" class="form-control" name="max_qty" id="max_qty" min=0 type="number">
                     </div>
                     <div class="col-sm-2">
-                        <select class="form-control" name="cur_type" id="cur_type">
-                            <option value="USD">USD</option>
-                            <option value="BTC">BTC</option>
+                        <select [(ngModel)]="project.budget.type" [ngModelOptions]="{standalone: true}" class="form-control" id="cur_type" (ngModelChange)="onChangeBudgetType($event)">
+                            <option [ngValue]="USD" selected>USD</option>
+                            <option [ngValue]="BTC">BTC</option>
                         </select>
                     </div>
                 </div>
                 <br><br>
                 <div class="form-group">
                     <div class="col-sm-9">
-                        <button click="save()" class="btn btn_5 btn-lg btn-primary" type="submit">Post Project</button>
+                        <a (click)="save()" class="btn btn_5 btn-lg btn-primary">Post Project</a>
                     </div>
                 </div>
             </form>
