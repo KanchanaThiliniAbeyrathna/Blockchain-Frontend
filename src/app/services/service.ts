@@ -59,10 +59,25 @@ export class MyService {
         return this.callAPI('createfrom','get',params,null,null);
     }
 
-    liststreamitems(stream : string):Promise<any> {
+    publishToStream(stream : string, key : string, data_hex:string):Promise<any> {
         let params:URLSearchParams = new URLSearchParams();
         params.set( 'stream' , stream);
+        params.set( 'key' , key);
+        params.set( 'data_hex' , data_hex);        
+        return this.callAPI('publish','get',params,null,null);
+    }
+
+    listStreamItems(stream : string):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        params.set( 'stream' , stream);       
         return this.callAPI('liststreamitems','get',params,null,null);
+    }
+
+    getstreamitem(stream : string,txid:string):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        params.set( 'stream' , stream); 
+        params.set( 'txid' , txid);                     
+        return this.callAPI('getstreamitem','get',params,null,null);
     }
     
     callAPI(url: string, httpMethod: string, params: URLSearchParams, headers: Headers, body: string) : Promise<any>{
