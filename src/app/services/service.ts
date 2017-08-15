@@ -58,6 +58,12 @@ export class MyService {
         params.set( 'name' , name);
         return this.callAPI('createfrom','get',params,null,null);
     }
+
+    liststreamitems(stream : string):Promise<any> {
+        let params:URLSearchParams = new URLSearchParams();
+        params.set( 'stream' , stream);
+        return this.callAPI('liststreamitems','get',params,null,null);
+    }
     
     callAPI(url: string, httpMethod: string, params: URLSearchParams, headers: Headers, body: string) : Promise<any>{
         switch (httpMethod) {
